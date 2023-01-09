@@ -10,6 +10,12 @@ public class MonthlyTask extends Task {
                 && date.getDayOfMonth()==dateTime.getDayOfMonth()
                 ||date.isEqual(dateTime.toLocalDate());
     }
+
+    @Override
+    public boolean checkDate(LocalDateTime requestedDate) {
+        return false;
+    }
+
     @Override
     protected String getType() {
         return "Ежемесячная";
