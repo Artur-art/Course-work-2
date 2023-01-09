@@ -14,7 +14,7 @@ public  abstract class Task implements Repeatable {
     private final boolean isWork;
     protected LocalDateTime dateTime;
 
-    public Task(String title,String description,boolean isWork,LocalDateTime dateTime) {
+    public Task(String title, String description, boolean isWork, LocalDateTime dateTime) {
         this.id = ++counter;
         this.title=title;
         this.description=description;
@@ -64,5 +64,8 @@ public  abstract class Task implements Repeatable {
                 ", дата " + dateTime +
                 ", " + (isWork? "рабочая" : "личная")  + ".";
     }
+
+    public abstract boolean checkDate(LocalDateTime requestedDate);
+
     protected abstract String getType();
 }
